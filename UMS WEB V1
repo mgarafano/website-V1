@@ -1,0 +1,1001 @@
+<div id="ums-kiosk">
+
+  <div class="ums-header">
+    <h1>UPTOWN MERCH SOLUTIONS</h1>
+    <p>Custom Printing • Embroidery • Banners • Stickers & More</p>
+    <h2>START YOUR ORDER</h2>
+  </div>
+
+  <form id="umsOrderForm">
+
+    <!-- CUSTOMER -->
+    <div class="ums-card">
+      <h3>1. Customer Information</h3>
+
+      <label>Customer Name *</label>
+      <input type="text" id="customerName" required>
+
+      <label>Company / Brand</label>
+      <input type="text" id="companyName">
+
+      <label>Phone Number *</label>
+      <input type="tel" id="phone" required>
+
+      <label>Email *</label>
+      <input type="email" id="email" required>
+    </div>
+
+
+    <!-- SERVICE -->
+    <div class="ums-card">
+
+      <h3>2. What Do You Need?</h3>
+
+      <div class="service-grid">
+
+        <button type="button" class="service-btn"
+          data-service="Custom T-Shirts">
+          Custom T-Shirts
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="DTF Printing">
+          DTF Printing
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Embroidery">
+          Embroidery
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Hats">
+          Custom Hats
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Banners">
+          Banners
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Stickers">
+          Stickers
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Posters">
+          Posters
+        </button>
+
+        <button type="button" class="service-btn"
+          data-service="Promotional Products">
+          Promo Products
+        </button>
+
+      </div>
+
+      <input type="hidden" id="service" required>
+
+    </div>
+
+
+    <!-- BLANK SOURCE -->
+    <div class="ums-card">
+
+      <h3>3. Garment / Product</h3>
+
+      <label class="choice">
+        <input type="radio"
+          name="blankSource"
+          value="UMS Blank"
+          checked>
+        Purchase blank from Uptown Merch
+      </label>
+
+      <label class="choice">
+        <input type="radio"
+          name="blankSource"
+          value="Customer Supplied">
+        I am bringing my own items
+      </label>
+
+      <label>Garment / Product Description</label>
+      <input
+        type="text"
+        id="product"
+        placeholder="Example: Black T-shirt">
+
+      <label>Color</label>
+      <input type="text" id="color">
+
+    </div>
+
+
+    <!-- QUANTITY -->
+    <div class="ums-card">
+
+      <h3>4. Quantity & Sizes</h3>
+
+      <label>Total Quantity *</label>
+      <input
+        type="number"
+        id="quantity"
+        value="1"
+        min="1"
+        required>
+
+      <label>Sizes</label>
+      <textarea
+        id="sizes"
+        placeholder="Example: 2 Small, 4 Medium, 5 Large, 1 XL"></textarea>
+
+    </div>
+
+
+    <!-- PRINT LOCATION -->
+    <div class="ums-card">
+
+      <h3>5. Print / Decoration</h3>
+
+      <label class="choice">
+        <input
+          type="checkbox"
+          id="frontPrint">
+        Front
+      </label>
+
+      <label class="choice">
+        <input
+          type="checkbox"
+          id="backPrint">
+        Back
+      </label>
+
+      <label class="choice">
+        <input
+          type="checkbox"
+          id="leftChest">
+        Left Chest
+      </label>
+
+      <label class="choice">
+        <input
+          type="checkbox"
+          id="sleeve">
+        Sleeve
+      </label>
+
+    </div>
+
+
+    <!-- ARTWORK -->
+    <div class="ums-card">
+
+      <h3>6. Upload Your Artwork</h3>
+
+      <div class="upload-box">
+
+        <p>
+          PNG • JPG • PDF • SVG
+        </p>
+
+        <input
+          type="file"
+          id="artwork"
+          accept=".png,.jpg,.jpeg,.pdf,.svg"
+          multiple>
+
+      </div>
+
+      <label>Design Instructions</label>
+
+      <textarea
+        id="designNotes"
+        placeholder="Tell us where you want the artwork and how you want it printed."></textarea>
+
+    </div>
+
+
+    <!-- RUSH -->
+    <div class="ums-card">
+
+      <h3>7. When Do You Need It?</h3>
+
+      <label>Requested Date</label>
+      <input type="date" id="dueDate">
+
+      <label class="rush-option">
+
+        <input
+          type="checkbox"
+          id="rush">
+
+        <span>
+          <strong>RUSH ORDER</strong><br>
+          Additional rush charges may apply.
+        </span>
+
+      </label>
+
+    </div>
+
+
+    <!-- DELIVERY -->
+    <div class="ums-card">
+
+      <h3>8. Pickup or Shipping</h3>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="delivery"
+          value="Pickup"
+          checked>
+        Pickup at Uptown Merch
+      </label>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="delivery"
+          value="Shipping">
+        Ship My Order
+      </label>
+
+      <div id="shippingFields" style="display:none">
+
+        <label>Shipping Address</label>
+
+        <textarea
+          id="shippingAddress"
+          placeholder="Street, City, State, ZIP"></textarea>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRICE -->
+    <div class="ums-card">
+
+      <h3>9. Order Price</h3>
+
+      <label>Order Total</label>
+
+      <div class="money-input">
+
+        <span>$</span>
+
+        <input
+          type="number"
+          id="orderTotal"
+          value="0"
+          min="0"
+          step=".01">
+
+      </div>
+
+      <div class="payment-box">
+
+        <p>PAYMENT REQUIRED TODAY</p>
+
+        <h2 id="paymentDue">$0.00</h2>
+
+        <span id="paymentRule">
+          Full payment required.
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="ums-card summary-card">
+
+      <h3>ORDER SUMMARY</h3>
+
+      <div class="summary-row">
+        <span>Service</span>
+        <strong id="summaryService">Not selected</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Quantity</span>
+        <strong id="summaryQty">1</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Blank Source</span>
+        <strong id="summaryBlank">UMS Blank</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Rush</span>
+        <strong id="summaryRush">No</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Order Total</span>
+        <strong id="summaryTotal">$0.00</strong>
+      </div>
+
+      <div class="summary-row total-row">
+        <span>Due Today</span>
+        <strong id="summaryDue">$0.00</strong>
+      </div>
+
+    </div>
+
+
+    <!-- NOTES -->
+    <div class="ums-card">
+
+      <h3>10. Additional Notes</h3>
+
+      <textarea
+        id="notes"
+        placeholder="Anything else we should know?"></textarea>
+
+    </div>
+
+
+    <div class="terms">
+
+      <label>
+
+        <input
+          type="checkbox"
+          id="terms"
+          required>
+
+        I confirm the order information and artwork are correct.
+
+      </label>
+
+    </div>
+
+
+    <button
+      type="submit"
+      id="submitOrder">
+
+      SUBMIT ORDER
+
+    </button>
+
+
+    <p class="ums-policy">
+
+      Orders under 12 pieces require full payment.
+      Orders of 12 or more require a minimum 50% deposit.
+      Production does not begin until payment and artwork are received.
+
+    </p>
+
+  </form>
+
+</div>
+
+
+<style>
+
+#ums-kiosk {
+  max-width: 950px;
+  margin: auto;
+  padding: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+}
+
+.ums-header {
+  text-align: center;
+  padding: 35px 15px;
+  background: #111;
+  color: white;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.ums-header h1 {
+  margin: 0;
+  font-size: 38px;
+}
+
+.ums-header h2 {
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+.ums-card {
+  background: white;
+  padding: 28px;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.ums-card h3 {
+  margin-top: 0;
+  font-size: 23px;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #bbb;
+  border-radius: 9px;
+  font-size: 18px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.choice {
+  background: #f4f4f4;
+  padding: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.choice input,
+.rush-option input,
+.terms input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+
+.service-btn {
+  min-height: 85px;
+  border: 2px solid #111;
+  background: white;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.service-btn.active {
+  background: #111;
+  color: white;
+}
+
+.upload-box {
+  border: 3px dashed #999;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.rush-option {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.money-input {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.money-input span {
+  margin-right: 8px;
+}
+
+.payment-box {
+  text-align: center;
+  margin-top: 25px;
+  padding: 20px;
+  background: #111;
+  color: white;
+  border-radius: 12px;
+}
+
+.payment-box h2 {
+  font-size: 38px;
+  margin: 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.total-row {
+  font-size: 22px;
+}
+
+#submitOrder {
+  width: 100%;
+  border: 0;
+  background: #111;
+  color: white;
+  min-height: 80px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#submitOrder:hover {
+  opacity: .85;
+}
+
+.terms {
+  margin: 25px 0;
+}
+
+.ums-policy {
+  text-align: center;
+  font-size: 14px;
+  margin: 25px;
+}
+
+@media(max-width:700px){
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #ums-kiosk {
+    padding: 10px;
+  }
+
+}
+
+</style>
+
+
+<script>
+
+const quantity =
+  document.getElementById("quantity");
+
+const orderTotal =
+  document.getElementById("orderTotal");
+
+const rush =
+  document.getElementById("rush");
+
+const service =
+  document.getElementById("service");
+
+
+/* ------------------------
+SERVICE BUTTONS
+------------------------- */
+
+document
+.querySelectorAll(".service-btn")
+.forEach(button => {
+
+  button.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".service-btn")
+    .forEach(b => b.classList.remove("active"));
+
+    this.classList.add("active");
+
+    service.value =
+      this.dataset.service;
+
+    document.getElementById(
+      "summaryService"
+    ).textContent =
+      this.dataset.service;
+
+  });
+
+});
+
+
+/* ------------------------
+PAYMENT CALCULATION
+------------------------- */
+
+function calculatePayment(){
+
+  let qty =
+    Number(quantity.value) || 1;
+
+  let total =
+    Number(orderTotal.value) || 0;
+
+  let due;
+
+  if(qty >= 12){
+
+    due = total * .50;
+
+    document.getElementById(
+      "paymentRule"
+    ).textContent =
+      "50% deposit required for orders of 12 or more.";
+
+  } else {
+
+    due = total;
+
+    document.getElementById(
+      "paymentRule"
+    ).textContent =
+      "Full payment required for orders under 12 pieces.";
+
+  }
+
+
+  document.getElementById(
+    "paymentDue"
+  ).textContent =
+    "$" + due.toFixed(2);
+
+
+  document.getElementById(
+    "summaryDue"
+  ).textContent =
+    "$" + due.toFixed(2);
+
+
+  document.getElementById(
+    "summaryTotal"
+  ).textContent =
+    "$" + total.toFixed(2);
+
+
+  document.getElementById(
+    "summaryQty"
+  ).textContent =
+    qty;
+
+}
+
+
+quantity.addEventListener(
+  "input",
+  calculatePayment
+);
+
+orderTotal.addEventListener(
+  "input",
+  calculatePayment
+);
+
+
+/* ------------------------
+BLANK SOURCE
+------------------------- */
+
+document
+.querySelectorAll(
+  'input[name="blankSource"]'
+)
+.forEach(input => {
+
+  input.addEventListener("change", () => {
+
+    document.getElementById(
+      "summaryBlank"
+    ).textContent =
+      document.querySelector(
+        'input[name="blankSource"]:checked'
+      ).value;
+
+  });
+
+});
+
+
+/* ------------------------
+RUSH
+------------------------- */
+
+rush.addEventListener(
+  "change",
+  function(){
+
+    document.getElementById(
+      "summaryRush"
+    ).textContent =
+      this.checked ? "YES" : "No";
+
+  }
+);
+
+
+/* ------------------------
+SHIPPING
+------------------------- */
+
+document
+.querySelectorAll(
+  'input[name="delivery"]'
+)
+.forEach(input => {
+
+  input.addEventListener(
+    "change",
+    function(){
+
+      const shipping =
+        document.querySelector(
+          'input[name="delivery"]:checked'
+        ).value;
+
+      document.getElementById(
+        "shippingFields"
+      ).style.display =
+        shipping === "Shipping"
+          ? "block"
+          : "none";
+
+    }
+  );
+
+});
+
+
+/* ------------------------
+ORDER NUMBER
+------------------------- */
+
+function createOrderNumber(){
+
+  const today =
+    new Date();
+
+  const date =
+    today.getFullYear()
+    +
+    String(
+      today.getMonth()+1
+    ).padStart(2,"0")
+    +
+    String(
+      today.getDate()
+    ).padStart(2,"0");
+
+  const random =
+    Math.floor(
+      1000 +
+      Math.random()*9000
+    );
+
+  return "UMS-" +
+    date +
+    "-" +
+    random;
+
+}
+
+
+/* ------------------------
+SUBMIT ORDER
+------------------------- */
+
+document
+.getElementById(
+  "umsOrderForm"
+)
+.addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
+
+
+    if(!service.value){
+
+      alert(
+        "Please select a service."
+      );
+
+      return;
+
+    }
+
+
+    const orderNumber =
+      createOrderNumber();
+
+
+    const qty =
+      Number(
+        quantity.value
+      );
+
+
+    const total =
+      Number(
+        orderTotal.value
+      ) || 0;
+
+
+    const deposit =
+      qty >= 12
+        ? total * .50
+        : total;
+
+
+    const orderData = {
+
+      orderNumber:
+        orderNumber,
+
+      date:
+        new Date()
+        .toISOString(),
+
+      customerName:
+        document.getElementById(
+          "customerName"
+        ).value,
+
+      company:
+        document.getElementById(
+          "companyName"
+        ).value,
+
+      phone:
+        document.getElementById(
+          "phone"
+        ).value,
+
+      email:
+        document.getElementById(
+          "email"
+        ).value,
+
+      service:
+        service.value,
+
+      blankSource:
+        document.querySelector(
+          'input[name="blankSource"]:checked'
+        ).value,
+
+      product:
+        document.getElementById(
+          "product"
+        ).value,
+
+      color:
+        document.getElementById(
+          "color"
+        ).value,
+
+      quantity:
+        qty,
+
+      sizes:
+        document.getElementById(
+          "sizes"
+        ).value,
+
+      front:
+        document.getElementById(
+          "frontPrint"
+        ).checked,
+
+      back:
+        document.getElementById(
+          "backPrint"
+        ).checked,
+
+      leftChest:
+        document.getElementById(
+          "leftChest"
+        ).checked,
+
+      sleeve:
+        document.getElementById(
+          "sleeve"
+        ).checked,
+
+      designNotes:
+        document.getElementById(
+          "designNotes"
+        ).value,
+
+      rush:
+        rush.checked,
+
+      dueDate:
+        document.getElementById(
+          "dueDate"
+        ).value,
+
+      delivery:
+        document.querySelector(
+          'input[name="delivery"]:checked'
+        ).value,
+
+      shippingAddress:
+        document.getElementById(
+          "shippingAddress"
+        ).value,
+
+      total:
+        total,
+
+      depositDue:
+        deposit,
+
+      notes:
+        document.getElementById(
+          "notes"
+        ).value
+
+    };
+
+
+    console.log(
+      "UMS ORDER",
+      orderData
+    );
+
+
+    alert(
+      "ORDER RECEIVED!\n\n" +
+      "Order Number: " +
+      orderNumber +
+      "\n\n" +
+      "Amount Due Today: $" +
+      deposit.toFixed(2)
+    );
+
+
+    /*
+      NEXT STEP:
+
+      Send orderData to the UMS
+      Google Sheet / Shopify backend.
+
+      Example:
+
+      fetch("YOUR-WEBHOOK-URL", {
+
+        method:"POST",
+
+        headers:{
+          "Content-Type":
+          "application/json"
+        },
+
+        body:
+          JSON.stringify(orderData)
+
+      });
+
+    */
+
+  }
+);
+
+
+calculatePayment();
+
+</script>
